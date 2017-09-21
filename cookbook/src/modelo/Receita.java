@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
 import java.util.Objects;
 
-/**
- *
- * @author Admin
- */
 public class Receita {
 
     private Integer id;
@@ -18,7 +9,17 @@ public class Receita {
     private String ingredientes;
     private String preparo;
     private String ModoServir;
+    private Categoria categoria;
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria c) {
+        this.categoria = c;
+        c.setReceita(this);
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -83,6 +84,4 @@ public class Receita {
         return true;
     }
 
-    
-    
 }
